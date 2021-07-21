@@ -1,31 +1,30 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <variant>
 
 
 namespace cosmic {
-    union ListItem {
-        std::int32_t n;
-        // Destructor is necessary
-        ~ListItem() = default;
-    };
-
     struct List {
-        // Trying unions for multi data type vector
 
-        std::vector<ListItem> l_vec{};
+        std::variant<int, double, std::string> ListItem;
+        std::vector<std::variant<int, double, std::string>> l_vec{};
 
-        void add_item(int32_t num) {
+        void add_item(auto num) {
             // Fill data into vector
-                ListItem n = {num};
-                l_vec.push_back(n);
+            // Time Complexity O(1)
+                ListItem = num;
+                l_vec.push_back(ListItem);
         }
+
     };
 }
 
 int main() {
     cosmic::List l;
-    l.add_item(5);
+    l.add_item("hello world");
+
+
     return 0;
 }
 
