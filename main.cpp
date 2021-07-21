@@ -20,13 +20,13 @@ namespace cosmic {
     };
 }
 
-int main() {
-    cosmic::List l;
-    l.add_item("hello world");
-
-
-    return 0;
-}
+//int main() {
+//    cosmic::List l;
+//    l.add_item("hello world");
+//
+//
+//    return 0;
+//}
 
 /* Pseudocode
  1. The Python List is implemented in various ways
